@@ -26,7 +26,6 @@ class ContactController {
     
     func createContactWith(name: String, phoneNumber: String, email: String, completion: @escaping(Contact?) -> Void) {
         let newContact = Contact(name: name, phoneNumber: phoneNumber, email: email)
-        self.contacts.append(newContact)
         let record = CKRecord(contact: newContact)
         publicDB.save(record) { (record, error) in
             if let error = error {
@@ -36,6 +35,7 @@ class ContactController {
             }
             guard let record = record,
                 let contact = Contact(record: record) else {completion(nil); return}
+            self.contacts.append(newContact)
             completion(contact)
         }
     }

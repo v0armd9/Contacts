@@ -26,8 +26,8 @@ class ContactDetailViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let name =  nameTextField.text, !name.isEmpty,
-        let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
-        let email = emailAddressTextField.text, !email.isEmpty
+        let phoneNumber = phoneNumberTextField.text,
+        let email = emailAddressTextField.text
             else {return}
         if let contact = contact {
             ContactController.sharedInstance.update(contact: contact, withName: name, phoneNumber: phoneNumber, email: email)

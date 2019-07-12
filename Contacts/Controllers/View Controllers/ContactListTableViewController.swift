@@ -26,6 +26,7 @@ class ContactListTableViewController: UITableViewController {
         ContactController.sharedInstance.fetchContacts { (contacts) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 completion?(contacts != nil)
             }
         }

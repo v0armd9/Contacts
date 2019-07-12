@@ -27,7 +27,7 @@ class Contact {
     var recordID: CKRecord.ID
     
     //Designated Initializer
-    init(name: String, phoneNumber: String, email: String, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
+    init(name: String, phoneNumber: String = "", email: String = "", recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
         
         self.name = name
         self.phoneNumber = phoneNumber
