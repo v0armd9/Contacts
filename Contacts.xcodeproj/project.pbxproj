@@ -12,6 +12,7 @@
 		2CDA889322D8ED3500D07CD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA889222D8ED3500D07CD5 /* Assets.xcassets */; };
 		2CDA889622D8ED3500D07CD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA889422D8ED3500D07CD5 /* LaunchScreen.storyboard */; };
 		2CDA88A722D8EDB400D07CD5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDA88A622D8EDB400D07CD5 /* CloudKit.framework */; };
+		2CDA88A922D8EFB400D07CD5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA88A822D8EFB400D07CD5 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2CDA889722D8ED3500D07CD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CDA88A422D8EDB200D07CD5 /* Contacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Contacts.entitlements; sourceTree = "<group>"; };
 		2CDA88A622D8EDB400D07CD5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2CDA88A822D8EFB400D07CD5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		2CDA889E22D8ED5D00D07CD5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2CDA88A822D8EFB400D07CD5 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDA88A922D8EFB400D07CD5 /* Contact.swift in Sources */,
 				2CDA888C22D8ED2D00D07CD5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
