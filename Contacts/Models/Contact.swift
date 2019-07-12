@@ -35,6 +35,7 @@ class Contact {
         self.recordID = recordID
     }
     
+    //Convenience initializer to take in a CKRecord and initialize a contact object
     convenience init?(record: CKRecord) {
         guard let name = record[ContactConstants.nameKey] as? String,
         let phoneNumber = record[ContactConstants.phoneNumberKey] as? String,
@@ -45,11 +46,19 @@ class Contact {
     }
 }
 
+// Extension on CKRecord to initialize a CKRecord from a Contact
 extension CKRecord {
     convenience init(contact: Contact) {
         self.init(recordType: ContactConstants.recordType, recordID: contact.recordID)
         self.setValue(contact.name, forKey: ContactConstants.nameKey)
         self.setValue(contact.phoneNumber, forKey: ContactConstants.phoneNumberKey)
         self.setValue(contact.email, forKey: ContactConstants.emailKey)
+    }
+}
+
+//Extension on Contact to allow for Delete functionality
+extension Contact: Equatable {
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.recordID == rhs.recordID
     }
 }
