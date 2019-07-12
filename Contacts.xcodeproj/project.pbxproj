@@ -14,6 +14,8 @@
 		2CDA88A722D8EDB400D07CD5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDA88A622D8EDB400D07CD5 /* CloudKit.framework */; };
 		2CDA88A922D8EFB400D07CD5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA88A822D8EFB400D07CD5 /* Contact.swift */; };
 		2CDA88AB22D8F4E800D07CD5 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA88AA22D8F4E800D07CD5 /* ContactController.swift */; };
+		2CDA88AD22D8FD1800D07CD5 /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA88AC22D8FD1800D07CD5 /* ContactListTableViewController.swift */; };
+		2CDA88AF22D9004C00D07CD5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA88AE22D9004C00D07CD5 /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		2CDA88A622D8EDB400D07CD5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2CDA88A822D8EFB400D07CD5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2CDA88AA22D8F4E800D07CD5 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		2CDA88AC22D8FD1800D07CD5 /* ContactListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
+		2CDA88AE22D9004C00D07CD5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		2CDA88A222D8ED8700D07CD5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CDA88AC22D8FD1800D07CD5 /* ContactListTableViewController.swift */,
+				2CDA88AE22D9004C00D07CD5 /* ContactDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -217,7 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDA88A922D8EFB400D07CD5 /* Contact.swift in Sources */,
+				2CDA88AF22D9004C00D07CD5 /* ContactDetailViewController.swift in Sources */,
 				2CDA888C22D8ED2D00D07CD5 /* AppDelegate.swift in Sources */,
+				2CDA88AD22D8FD1800D07CD5 /* ContactListTableViewController.swift in Sources */,
 				2CDA88AB22D8F4E800D07CD5 /* ContactController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

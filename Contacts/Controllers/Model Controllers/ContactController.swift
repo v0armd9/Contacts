@@ -20,7 +20,7 @@ class ContactController {
     //Database constant
     let publicDB = CKContainer.default().privateCloudDatabase
     
-    // CRUD: - Functions
+// CRUD: - Functions
     
     //Create Functions
     
@@ -40,7 +40,7 @@ class ContactController {
         }
     }
     
-    //Read Functions
+    //Read Function
     
     func fetchContacts(completion: @escaping([Contact]?) -> Void) {
         let predicate = NSPredicate(value: true)
@@ -74,7 +74,7 @@ class ContactController {
         }
     }
     
-    func updateCloud(record: CKRecord, database: CKDatabase, completion: @escaping (Bool) -> Void) {
+    private func updateCloud(record: CKRecord, database: CKDatabase, completion: @escaping (Bool) -> Void) {
         let modifyOperation = CKModifyRecordsOperation()
         modifyOperation.recordsToSave = [record]
         modifyOperation.savePolicy = .changedKeys
@@ -97,7 +97,7 @@ class ContactController {
         }
     }
     
-    func deleteFromCloud(recordID: CKRecord.ID, database: CKDatabase, completion: @escaping (Bool) -> Void) {
+    private func deleteFromCloud(recordID: CKRecord.ID, database: CKDatabase, completion: @escaping (Bool) -> Void) {
         database.delete(withRecordID: recordID) { (_, error) in
             if let error = error {
                 print("Error in \(#function): \(error.localizedDescription) /n---/n \(error)")
@@ -106,5 +106,4 @@ class ContactController {
             completion(true)
         }
     }
-    
 }

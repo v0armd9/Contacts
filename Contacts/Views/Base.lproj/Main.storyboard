@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VwP-8V-y7Z">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,21 +10,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Contacts-->
         <scene sceneID="8vp-6I-Ug2">
             <objects>
-                <tableViewController id="O9a-4J-fHt" sceneMemberID="viewController">
+                <tableViewController id="O9a-4J-fHt" customClass="ContactListTableViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o3t-8h-5al">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="bbP-pk-vOm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="uQ7-gz-MNF" detailTextLabel="I8G-Ux-25b" style="IBUITableViewCellStyleSubtitle" id="bbP-pk-vOm">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbP-pk-vOm" id="s9y-Jm-0b2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQ7-gz-MNF">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I8G-Ux-25b">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="v2W-Ze-NPg" kind="show" identifier="toEditDetailView" id="kpT-yU-cIY"/>
@@ -36,7 +52,7 @@
                             <outlet property="delegate" destination="O9a-4J-fHt" id="wPD-2D-Yeh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nCe-tJ-pvA">
+                    <navigationItem key="navigationItem" title="Contacts" id="nCe-tJ-pvA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="s9B-Ry-Cg0">
                             <connections>
                                 <segue destination="v2W-Ze-NPg" kind="show" id="NvF-0R-uco"/>
@@ -51,7 +67,7 @@
         <!--Title-->
         <scene sceneID="MYo-O7-aIO">
             <objects>
-                <viewController id="v2W-Ze-NPg" sceneMemberID="viewController">
+                <viewController id="v2W-Ze-NPg" customClass="ContactDetailViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EJd-TT-HEg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +90,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Phone Number..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nq-WQ-efV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123-456-7890" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nq-WQ-efV">
                                 <rect key="frame" x="20.5" y="235" width="373" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -117,8 +133,17 @@
                         <viewLayoutGuide key="safeArea" id="f1u-X4-ZX5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="sRz-aU-Mwa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0M0-DK-yaL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0M0-DK-yaL">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="v2W-Ze-NPg" id="goZ-x5-YNM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="4HX-te-lvz" id="1dH-cw-MNO"/>
+                        <outlet property="nameTextField" destination="zhz-A9-m8u" id="eN3-NJ-5dv"/>
+                        <outlet property="phoneNumberTextField" destination="9nq-WQ-efV" id="YmN-Pu-122"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAr-B3-4Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
